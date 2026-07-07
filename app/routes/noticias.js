@@ -1,15 +1,8 @@
-const { response } = require("express");
+var dbconnection=require("../../config/dbconnection");//importa o arquivo dbconnection.js
 
 module.exports = function (app) {
+  var connection = dbconnection();
   app.get("/noticias", function (req, res) {
-    var mysql = require("mysql");
-
-    var connection = mysql.createConnection({
-      host: "localhost",
-      user: "root",
-      password: "123456",
-      database: "portal_noticias",
-    });
 
     connection.query(
       "SELECT * FROM noticias",
