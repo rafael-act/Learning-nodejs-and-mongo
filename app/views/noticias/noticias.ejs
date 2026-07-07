@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-	<html lang="pt-br">
-		<head>
-			<meta charset="utf-8"/>
-			<title>Not�cias</title>
-		</head>
-	<body>
-
-		<h1>Not�cias</h1>
-	</body>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <title>Notícias</title>
+  </head>
+  <body>
+    <h1>Notícias view</h1>
+    <table border="1">
+      <tr><th>ID</th>
+        <th>Título</th>
+        <th>Notícia</th>
+        <th>Data</th>
+      </tr>
+	  <tr>
+		<td>1</td>
+		<td>Notícia 1</td>
+		<td>Conteúdo da notícia 1</td>
+		<td>01/01/2024</td>
+	  </tr>
+	  <% for (var i = 0; i < noticias.length; i++) { %>
+	  <tr>
+		<td><%= noticias[i].id_noticia %></td>
+		<td><%= noticias[i].titulo %></td>
+		<td><%= noticias[i].noticia %></td>
+		<td><%= noticias[i].data_criacao %></td>
+	  </tr>
+	  <% } %>
+    </table>
+  </body>
 </html>
