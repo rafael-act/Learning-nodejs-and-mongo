@@ -1,9 +1,8 @@
 var dbconnection=require("../../config/dbconnection");//importa o arquivo dbconnection.js
 
 module.exports = function (app) {
-  var connection = dbconnection();
   app.get("/noticias", function (req, res) {
-
+var connection = app.config.dbConnection();//cria a conexão com o banco de dados  
     connection.query(
       "SELECT * FROM noticias",
       function (error, results, fields) {
