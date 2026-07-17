@@ -8,16 +8,22 @@
   </head>
   <body>
     <h1>Notícias view</h1>
-    <table  class="table-primary table-striped-columns">
+    <table  class="table table-primary table-striped-columns">
       <tr><th>ID</th>
         <th>Título</th>
+        <th>Resumo</th>
+        <th>Data Noticia</th>
+        <th>autor</th>
         <th>Notícia</th>
-        <th>Data</th>
+        <th>Data Criacao</th>
       </tr>
-	  <% for (var i = 0; i < noticias.length; i++) { %>
+	  <% for (var i = noticias.length - 1; i >= 0; i--) { %>
 	  <tr>
-		<td><%= noticias[i].id_noticia %></td>
+		<th scope="row"><%= noticias[i].id_noticia %></td>
 		<td><%= noticias[i].titulo %></td>
+		<td><%= noticias[i].resumo %></td>
+		<td><%= noticias[i].data_noticia %></td>
+		<td><%= noticias[i].autor %></td>
 		<td><%= noticias[i].noticia %></td>
 		<td><%= noticias[i].data_criacao %></td>
 	  </tr>

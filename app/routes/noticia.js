@@ -4,7 +4,6 @@ module.exports = function (application) {
     var noticiasModel = new application.app.models.NoticiasDAO(connection);
 
     noticiasModel.getNoticia(function (error, results) {
-      console.log(results);
       res.render("noticias/noticia", { noticia: results }); //envia para a view noticia.ejs o resultado da query
     });
   });
