@@ -11,8 +11,19 @@
     />
   </head>
   <body>
+    <div class="container">
     <h1>Adicionar notícia</h1>
     <br />
+      <% if(validacao.length>0){ %>
+		
+    <div class="alert alert-danger" role="alert">
+		<ul>
+		  <% for(var i=0; i<validacao.length; i++) { %>
+			<li><%= validacao[i].msg %></li>
+		  <% }; %>
+		</ul>
+    </div>
+	  <% } %>
     <form action="/noticias/salvar" method="post">
       <label for="titulo">Título:</label>
       <input
@@ -20,6 +31,7 @@
         id="titulo"
         name="titulo"
         placeholder="Titulo da noticia"
+        value="<%= noticia.titulo%>"
       />
       <br />
       <label for="resumo">Resumo:</label>
@@ -28,6 +40,7 @@
         id="resumo"
         name="resumo"
         placeholder="Resumo da noticia"
+        value="<%= noticia.resumo%>"
       />
       <br />
       <label for="autor">Autor:</label>
@@ -36,13 +49,20 @@
         id="autor"
         name="autor"
         placeholder="Autor da noticia"
+        value="<%= noticia.autor%>"
       />
       <br />
       <label for="data_noticia">Data dos Fatos:</label>
-      <input type="date" id="data_noticia" name="data_noticia" placeholder="Data dos fatos" />
+      <input
+        type="date"
+        id="data_noticia"
+        name="data_noticia"
+        placeholder="Data dos fatos"
+        value="<%= noticia.data_noticia%>"
+      />
       <br />
       <label for="noticia">Notícia:</label>
-      <textarea id="noticia" name="noticia" rows="5" cols="30"></textarea>
+      <textarea id="noticia" name="noticia" rows="5" cols="30"><%= noticia.noticia%></textarea>
       <br />
       <input type="submit" value="Enviar" />
     </form>
@@ -51,5 +71,6 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+	</div>
   </body>
 </html>
