@@ -2,10 +2,10 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8" />
-    <title>Portal de not�cias</title>
+    <title>Portal de notícias</title>
   </head>
   <body>
-    <h1>Not�cia</h1>
+    <h1>Notícia</h1>
     <table border="1">
       <tr>
         <th>ID</th>
@@ -13,12 +13,15 @@
         <th>Notícia</th>
         <th>Data</th>
       </tr>
-      <tr>
-        <td><%= noticia.id_noticia %></td>
-        <td><%= noticia.titulo %></td>
-        <td><%= noticia.noticia %></td>
-        <td><%= noticia.data_criacao %></td>
-      </tr>
+     	  <% for (var i = 0; i < noticia.length; i++) { %>
+	  <tr>
+		<td><%= noticia[i].id_noticia %></td>
+		<td><%= noticia[i].titulo %></td>
+		<td><%= noticia[i].noticia %></td>
+		<td><%= noticia[i].data_criacao %></td>
+	  </tr>
+	  <% } %>
+      
     </table>
   </body>
 </html>

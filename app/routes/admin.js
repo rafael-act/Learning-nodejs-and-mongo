@@ -7,11 +7,10 @@ module.exports = function (application) {
     var noticia = req.body;
 
     var connection = application.config.dbConnection(); //cria a conexão com o banco de dados
-    var noticiasModel = new application.app.models.noticiasModel;
+    var noticiasModel = new application.app.models.noticiasDAO(connection);
 
-    noticiasModel.salvarNoticia(noticia, connection, function (error, results) {
+    noticiasModel.salvarNoticia(noticia, function (error, results) {
       res.redirect("/noticias");
-    }
-    );
+    });
   });
-}
+} 
