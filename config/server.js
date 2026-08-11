@@ -15,6 +15,7 @@ console.log("Servidor rodando na porta 3000");
 consign().include("app/routes")
 .then("config/dbConnection.js")
 .then("app/models")
+.then("app/controllers")
 .into(app);
 
 module.exports = app;
