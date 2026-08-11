@@ -1,37 +1,135 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="pt-br">
-  <head>
-    <meta charset="utf-8" />
-    <title>Notícias</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+	<head>
+		<meta charset="UTF-8">
 
-  </head>
-  <body>
-    <div class="container">
-    <h1>Notícias view</h1>
-    <table  class="table table-striped-columns">
-      <tr><th>ID</th>
-        <th>Título</th>
-        <th>Resumo</th>
-        <th>Data Noticia</th>
-        <th>autor</th>
-        <th>Notícia</th>
-        <th>Data Criacao</th>
-      </tr>
-	  <% for (var i = noticias.length - 1; i >= 0; i--) { %>
-	  <tr>
-		<th scope="row"><%= noticias[i].id_noticia %></td>
-		<td><%= noticias[i].titulo %></td>
-		<td><%= noticias[i].resumo %></td>
-		<td><%= noticias[i].data_noticia %></td>
-		<td><%= noticias[i].autor %></td>
-		<td><%= noticias[i].noticia %></td>
-		<td><%= noticias[i].data_criacao %></td>
-	  </tr>
-	  <% } %>
-    </table>
-</div>
-       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+		<title>Portal de notícias</title>
+		
+		<!-- JQuery -->
+		<script src="js/jquery-2.2.1.js"></script>
 
-  </body>
+		<!-- bootstrap - link cdn -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	
+		<!-- incluindo css -->
+		<link href="css/style.css" rel="stylesheet">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="images/favicon.ico" />
+	</head>
+
+	<body>
+
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					
+					<img src="images/logo.png" />
+				</div>
+
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index.html">HOME</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+
+	    <div class="container">
+	    	<div class="row">
+	    		<div class="col-md-12">
+	    			<div class="noticia_wrapper">
+		    			<span class="noticia_autor">Por Jorge</span>
+		    			<a href="noticia.html" class="noticia_titulo">Título da notícia</a>
+		    			<span class="noticia_data">07/09/2016</span>
+		    			<br />
+		    			<p class="noticia_resumo">
+		    				Aqui fica o resumo da notícia com um limite de 100 caracteres!
+		    			</p>
+		    		</div>
+		    	</div>
+			</div>
+			<div class="row">
+	    		<div class="col-md-12">
+	    			<div class="noticia_wrapper">
+		    			<span class="noticia_autor">Por Jorge</span>
+		    			<a href="noticia.html" class="noticia_titulo">Título da notícia</a>
+		    			<span class="noticia_data">07/09/2016</span>
+
+		    			<br />
+		    			<p class="noticia_resumo">
+		    				Aqui fica o resumo da notícia com um limite de 100 caracteres!
+		    			</p>
+		    		</div>
+		    	</div>
+			</div>
+			<div class="row">
+	    		<div class="col-md-12">
+	    			<div class="noticia_wrapper">
+		    			<span class="noticia_autor">Por Jorge</span>
+		    			<a href="noticia.html" class="noticia_titulo">Título da notícia</a>
+		    			<span class="noticia_data">07/09/2016</span>
+
+		    			<br />
+		    			<p class="noticia_resumo">
+		    				Aqui fica o resumo da notícia com um limite de 100 caracteres!
+		    			</p>
+		    		</div>
+		    	</div>
+	    	</div>
+
+	    	<div class="row">
+	    		<div class="col-md-12">
+	    			<div class="noticia_wrapper">
+		    			<span class="noticia_autor">Por Jorge</span>
+		    			<a href="noticia.html" class="noticia_titulo">Título da notícia</a>
+		    			<span class="noticia_data">07/09/2016</span>
+		    			<br />
+		    			<p class="noticia_resumo">
+		    				Aqui fica o resumo da notícia com um limite de 100 caracteres!
+		    			</p>
+		    		</div>
+		    	</div>
+			</div>
+			<div class="row">
+	    		<div class="col-md-12">
+	    			<div class="noticia_wrapper">
+		    			<span class="noticia_autor">Por Jorge</span>
+		    			<a href="noticia.html" class="noticia_titulo">Título da notícia</a>
+		    			<span class="noticia_data">07/09/2016</span>
+
+		    			<br />
+		    			<p class="noticia_resumo">
+		    				Aqui fica o resumo da notícia com um limite de 100 caracteres!
+		    			</p>
+		    		</div>
+		    	</div>
+			</div>
+			<div class="row">
+	    		<div class="col-md-12">
+	    			<div class="noticia_wrapper">
+		    			<span class="noticia_autor">Por Jorge</span>
+		    			<a href="noticia.html" class="noticia_titulo">Título da notícia</a>
+		    			<span class="noticia_data">07/09/2016</span>
+
+		    			<br />
+		    			<p class="noticia_resumo">
+		    				Aqui fica o resumo da notícia com um limite de 100 caracteres!
+		    			</p>
+		    		</div>
+		    	</div>
+	    	</div>
+			
+	    </div>
+	
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	
+	</body>
 </html>
