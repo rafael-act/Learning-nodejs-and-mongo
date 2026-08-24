@@ -6,16 +6,16 @@
 		<title>Portal de notícias</title>
 		
 		<!-- JQuery -->
-		<script src="js/jquery-2.2.1.js"></script>
+		<script src="../js/jquery-2.2.1.js"></script>
 
 		<!-- bootstrap - link cdn -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	
 		<!-- incluindo css -->
-		<link href="css/style.css" rel="stylesheet">
+		<link href="../css/style.css" rel="stylesheet">
 
 		<!-- favicon -->
-		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel="shortcut icon" href="../images/favicon.ico" />
 	</head>
 
 	<body>
@@ -30,7 +30,7 @@
 						<span class="icon-bar"></span>
 					</button>
 					
-					<img src="images/logo.png" />
+					<img src="../images/logo.png" />
 				</div>
 
 				<div id="navbar" class="navbar-collapse collapse">
@@ -43,21 +43,23 @@
 
 
 	    <div class="container">
-		
+		<% if (validacao.length > 0) { %>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="alert alert-danger">
 						<strong>Atenção!</strong>
 						<ul>
-							<li>Título é obrigatório</li>
-							<li>Resumo é obrigatório</li>
+							<% for(var i = 0; i < validacao.length; i++) { %>
+								<li><%= validacao[i].msg %></li>
+							<% } %>
 						</ul>
 					</div>
 				</div>
 			</div>
+			<% } %>
 	    	<div class="row">
 	    		<div class="col-md-12">
-	    			<form>
+	    			<form action="/noticias/salvar" method="post">
 						<div class="form-group">
 							<label for="titulo">Título:</label>
 							<input type="text" class="form-control" id="titulo" name="titulo">
